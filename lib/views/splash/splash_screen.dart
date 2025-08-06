@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fitquest/core/constants/app_assets.dart';
 import 'package:fitquest/core/constants/app_colors.dart';
-import 'package:fitquest/views/auth/login_screen.dart';
+import 'package:fitquest/views/auth/auth_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        MaterialPageRoute(builder: (context) => const AuthScreen()),
       );
     });
   }

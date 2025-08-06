@@ -1,5 +1,5 @@
 import 'package:fitquest/views/diet_calculator/widgets/custom_dropdown.dart';
-import 'package:fitquest/views/diet_calculator/widgets/custom_textfield.dart';
+import 'package:fitquest/core/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:fitquest/core/constants/app_colors.dart';
 

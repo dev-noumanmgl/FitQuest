@@ -1,15 +1,15 @@
 import 'package:fitquest/core/widgets/custom_button.dart';
 import 'package:fitquest/views/auth/display_name_screen.dart';
-import 'package:fitquest/views/auth/widgets/auth_buttons.dart'
-    show LoginButtonImage;
+import 'package:fitquest/views/auth/signup_screen.dart';
+import 'package:fitquest/views/auth/widgets/auth_buttons.dart';
 import 'package:fitquest/views/dashboard/main_view.dart';
 import 'package:flutter/material.dart';
 import 'package:fitquest/core/constants/app_colors.dart';
 import 'package:fitquest/core/constants/app_strings.dart';
 import 'package:fitquest/core/constants/app_assets.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class AuthScreen extends StatelessWidget {
+  const AuthScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +82,7 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => const MainView()),
+                    MaterialPageRoute(builder: (_) => const SignupWithEmailScreen()),
                   );
                 },
               ),

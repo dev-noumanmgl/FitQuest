@@ -19,22 +19,35 @@ class _MainViewState extends State<MainView> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const StoreScreen(),
-    UpgradeScreen(),
-    DietCalculatorScreen(),
-    ProfileScreen(),
+    const UpgradeScreen(),
+    const DietCalculatorScreen(),
+    const ProfileScreen(),
   ];
+
+  Future<bool> _onWillPop() async {
+    if (_currentIndex != 0) {
+      setState(() {
+        _currentIndex = 0;
+      });
+      return false; // Don't exit the app
+    }
+    return true; // Exit the app if already on index 0
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _screens[_currentIndex],
-      bottomNavigationBar: BottomNavBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
+    return WillPopScope(
+      onWillPop: _onWillPop,
+      child: Scaffold(
+        body: _screens[_currentIndex],
+        bottomNavigationBar: BottomNavBar(
+          currentIndex: _currentIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+        ),
       ),
     );
   }

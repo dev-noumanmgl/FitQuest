@@ -1,5 +1,6 @@
 import 'package:fitquest/views/profile/widgets/coin_tile.dart';
-import 'package:fitquest/views/profile/widgets/setting_tile.dart';
+import 'package:fitquest/views/profile/widgets/profile_setting_tile.dart';
+import 'package:fitquest/views/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fitquest/core/constants/app_colors.dart';
 import 'package:fitquest/core/constants/app_strings.dart';
@@ -18,9 +19,25 @@ class ProfileScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Header
-              const Text(
-                'Profile',
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Profile',
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const SettingsScreen(),
+                        ),
+                      );
+                    },
+                    icon: Icon(Icons.settings, size: 28, color: AppColors.primaryGreen),
+                  ),
+                ],
               ),
               const SizedBox(height: 24),
 
@@ -53,7 +70,7 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: 32),
 
               // Referral Section
-              SettingTile(
+              ProfileSettingTile(
                 title: 'Referrals',
                 subtitle: 'Invite your friends',
                 onTap: () {},
@@ -69,7 +86,7 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: 16),
 
               // Tiers Section
-              SettingTile(
+              ProfileSettingTile(
                 title: 'Tiers',
                 subtitle: 'View benefits',
                 onTap: () {},

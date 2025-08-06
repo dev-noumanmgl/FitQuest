@@ -4,12 +4,14 @@ import 'package:fitquest/core/constants/app_colors.dart';
 class SettingTile extends StatelessWidget {
   final String title;
   final String subtitle;
+  final IconData icon;
   final VoidCallback onTap;
 
   const SettingTile({
     super.key,
     required this.title,
     required this.subtitle,
+    required this.icon,
     required this.onTap,
   });
 
@@ -27,6 +29,8 @@ class SettingTile extends StatelessWidget {
         ),
         child: Row(
           children: [
+            Icon(icon, color: AppColors.primaryGreen, size: 24),
+            const SizedBox(width: 16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
