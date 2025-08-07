@@ -5,7 +5,8 @@ import 'package:fitquest/views/dashboard/main_view.dart';
 import 'package:flutter/material.dart';
 
 class DisplayNameScreen extends StatefulWidget {
-  const DisplayNameScreen({super.key});
+  final String username;
+  const DisplayNameScreen({super.key, required this.username});
 
   @override
   State<DisplayNameScreen> createState() => _DisplayNameScreenState();

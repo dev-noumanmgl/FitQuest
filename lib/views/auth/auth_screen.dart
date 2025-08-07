@@ -94,7 +94,7 @@ class AuthScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => const DisplayNameScreen(),
+                      builder: (_) => const DisplayNameScreen(username: 'Dummy',),
                     ),
                   );
                 },
